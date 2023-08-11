@@ -1,0 +1,16 @@
+.primary-less-gap {
+  width: 40%;
+}
+
+.primary-more-gap {
+  width: 50%;
+}
+
+.secondary-less-gap {
+  width: 80%;
+}
+
+.secondary-more-gap {
+  width: 50%;
+  word-wrap: break-word;
+}

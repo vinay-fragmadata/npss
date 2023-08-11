@@ -1,0 +1,24 @@
+# name: $(Build.BuildId)
+# trigger:
+#   - none
+# pr:
+#   - none
+
+# resources:
+#   repositories:
+#     - repository: templates
+#       type: git
+#       name: National Payment Systems Strategy - NPSS/build-templates
+#   pipelines:
+#   - pipeline: $(Build.Repository.Name)-build
+#     source: uaeipp-core-ui-frontend-services-build
+#     trigger: true
+
+# stages:
+# - stage: Docker_Build
+#   jobs:
+#   - template: job-npss-docker-build.yaml@templates
+# - stage: Twistlock_Scan
+#   dependsOn: Docker_Build
+#   jobs:
+#   - template: job-npss-twistlock-scan.yaml@templates

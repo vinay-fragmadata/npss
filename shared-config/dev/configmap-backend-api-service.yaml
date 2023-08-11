@@ -1,0 +1,37 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-#{Build.Repository.Name}#
+data:
+  uaeipp_overlay_db_url: "jdbc:sqlserver://10.211.203.68:2433;databaseName=npss_demo;encrypt=false;"
+  uaeipp_overlay_db_username: "NPS_Admin"
+  uaeipp_overlay_db_drivername: "com.microsoft.sqlserver.jdbc.SQLServerDriver"
+  uaeipp_overlay_db_show_sql: "true"
+  uaeipp_overlay_db_format_sql: "true"
+  uaeipp_overlay_db_dialect: "org.hibernate.dialect.SQLServer2008Dialect"
+  uaeipp_overlay_db_matching_strategy: "ant-path-matcher"
+  uaeipp_overlay_db_ddl_auto: "none"
+  uaeipp_overlay_management_health: "always"
+  
+  uaeipp_overlay_ibm_mq_qm: "LSQM23" 
+  uaeipp_overlay_ibm_mq_channel: "NPSS_UAT_SVRCONN" 
+  uaeipp_overlay_ibm_mq_connname: "172.24.70.57(2323)" 
+  uaeipp_overlay_ibm_mq_username: "" 
+  uaeipp_overlay_requset_jms_queue: "NPSS_TRANSACTION_REQUEST_UAT"
+  uaeipp_overlay_result_jms_topic: "NPSS_TRANSACTION_RESULT_NOTIFICATION_UAT"
+  
+  flex_oauth_clientid: "09927dfc6a183fea78823d93237e7444"
+  flex_oauth_clientsecrete: "fea1c3ec994fe2b34d77200c4a9857d0"
+  flex_oauth_endpoint: "https://internal.apigateway.cibg.mashreqdev.com/mashreqtest/uae/oauth-v6/oauth2/token"
+  X_ORG_ID: "AE"
+  X_USER_ID: "NPSSUSER"
+  X_MSG_ID: "TEST"
+  internal_baseurl: ""
+  ipp_account_info: "https://internal.apigateway.cibg.mashreqdev.com/mashreqtest/uae/omw/ippgetaccountinfo/v1/ipp-get-account-info?accountOrIBANNumber={accountOrIBANNumber}"
+  ipp_transaction: "https://internal.apigateway.cibg.mashreqdev.com/mashreqtest/uae/omw/ipptransaction/v1/ipp-transaction"
+  threadpool_size: "10"
+  threadpool_time: "20000"
+  p2p_sct_time: "20000"
+  jws_clientid: "gk5CxXfhJvaRmaULRaPOmw"
+  jws_clientsecrete: "pZGtZohJBuAq12v7AvGgkuZV"
+  jws_endpoint: "https://external.apigateway.mashreqdev.com/mashreqtestexternal/b2b/oauth-proxy/introspect"

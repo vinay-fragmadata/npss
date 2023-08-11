@@ -1,0 +1,8 @@
+.table .withXML {
+  color: #264ca2 !important;
+  text-decoration: underline;
+}
+
+.table .withoutXML {
+  color: #313131 !important;
+}

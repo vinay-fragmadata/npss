@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: configmap-#{Build.Repository.Name}#
+data:
+  uaeipp_overlay_db_url: "jdbc:sqlserver://10.210.107.165:1433;databaseName=uaeipp_core_svcs_db;trustServerCertificate=true"
+  uaeipp_overlay_db_username: "uaeipp_core_svcs"
+  uaeipp_overlay_db_drivername: "com.microsoft.sqlserver.jdbc.SQLServerDriver"
+  uaeipp_overlay_db_show_sql: "true"
+  uaeipp_overlay_db_format_sql: "true"
+  uaeipp_overlay_db_dialect: "org.hibernate.dialect.SQLServer2008Dialect"
+  uaeipp_overlay_db_matching_strategy: "ant-path-matcher"
+  uaeipp_overlay_db_ddl_auto: "none"
+  

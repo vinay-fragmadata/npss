@@ -1,0 +1,30 @@
+.MuiTablePagination-displayedRows {
+  display: none;
+}
+
+.MuiTablePagination-select,
+.css-16c50h-MuiInputBase-root-MuiTablePagination-select {
+  margin-right: 0px;
+}
+
+.pagination {
+  .pagination-indicator {
+    font-family: Gilroy-medium;
+    font-weight: 400;
+    font-size: 0.875rem;
+    line-height: 1.43;
+    letter-spacing: 0.01071em;
+    color: #2c2c2c;
+    cursor: default;
+  }
+
+  .pagination-indicator span {
+    margin: 0 5px 0 5px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    line-height: 1.43;
+    letter-spacing: 0.01071em;
+    color: #2c2c2c;
+    cursor: default;
+  }
+}

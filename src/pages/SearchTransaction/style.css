@@ -1,0 +1,90 @@
+.search-transaction {
+  text-align: initial;
+  color: black;
+  margin-left: 6px;
+}
+.search-transaction-paper {
+  background-color: #f5f6f9;
+  padding-bottom: 1%;
+}
+.primary {
+  background: blue;
+  border: 0px;
+  width: 92px;
+  height: 36px;
+  color: white;
+  font-weight: bold;
+}
+
+.MuiTextField-root,
+.MuiFormControl-root {
+  width: 95%;
+}
+
+.search-transaction-paper .search-transaction-input-container {
+  margin: 0 1% 0 1%;
+  margin-left: 1%;
+}
+
+.search-transaction-input {
+  margin: 1% 0;
+}
+
+.MuiTextField-root {
+  background-color: #fff;
+}
+
+.select-input {
+  width: 96%;
+  background-color: #fff;
+}
+
+.result-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.download-button {
+  width: fit-content;
+  height: 42px;
+  border-radius: 4px;
+  border: 1px solid #dde0e9;
+  color: rgb(49, 49, 49);
+  font-family: Gilroy-regular;
+}
+
+.download-button:hover {
+  width: fit-content;
+  height: 42px;
+  border-radius: 4px;
+  border: 1px solid #dde0e9;
+  color: rgb(49, 49, 49);
+  font-family: Gilroy-Semibold;
+  transform: scale(1.02);
+  background-color: rgba(25, 118, 210, 0.04);
+}
+
+.download-to-icon {
+  height: 24px;
+  width: 20px;
+}
+
+element.style {
+  border: 2px solid red;
+}
+
+#select-label {
+}
+
+#select-label-focus {
+  color: #4f4f4f;
+  font-family: Gilroy-Medium;
+  font-weight: 800;
+}
+
+.download-button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 40%;
+}

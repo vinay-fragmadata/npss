@@ -1,0 +1,16 @@
+.App {
+  text-align: center;
+}
+
+.caret,
+#caret {
+  caret-color: red;
+}
+
+.confirmation-box {
+  .MuiDialog-container {
+    div {
+      min-width: 40%;
+    }
+  }
+}

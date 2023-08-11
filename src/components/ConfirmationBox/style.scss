@@ -1,0 +1,9 @@
+.confirmation-action {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  .btn-grp {
+    padding: 0 !important;
+  }
+  padding: 0 4% 2% 0;
+}

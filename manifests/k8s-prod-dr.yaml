@@ -1,0 +1,82 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: #{Build.Repository.Name}#
+spec:
+  ports:
+    - name: http
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    app: #{Build.Repository.Name}#
+  type: ClusterIP
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: #{Build.Repository.Name}#
+  name: #{Build.Repository.Name}#
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: #{Build.Repository.Name}#
+  template:
+    metadata:
+      annotations:
+        collectord.io/stderr-logs-type: "access_combined"
+        collectord.io/stdout-logs-type: "access_combined"
+      labels:
+        app: #{Build.Repository.Name}#
+    spec:
+      containers:
+        - env:
+            - name: APPLICATION_NAME
+              value: #{Build.Repository.Name}#
+            - name: ENVIRONMENT_NAME
+              valueFrom:
+                fieldRef:
+                  fieldPath: metadata.namespace
+            - name: JAVA_OPTS
+              value: -Xms512m -Xmx1200m
+          # envFrom:
+          #   - configMapRef:
+          #       name: configmap-#{Build.Repository.Name}#
+          #   - secretRef:
+          #       name: secrets-#{Build.Repository.Name}#
+          image: mashrequae.azurecr.io/#{Build.Repository.Name}#:#{Build.BuildId}#
+          name: #{Build.Repository.Name}#
+          resources:
+            requests:
+              memory: "256Mi"
+              cpu: "2m"
+            limits:
+              memory: "1.5G"
+              cpu: "500m"
+          ports:
+            - containerPort: 8080
+              name: http
+              protocol: TCP
+          volumeMounts:
+            - mountPath: /eec/docs #/usr/images
+              name: azure-file-share
+      imagePullSecrets:
+        - name: docker-secret
+      #     #initContainers:
+      #     #- command:
+      #     # - /bin/sh
+      #     # - -c
+      #     #- cp -ra /opt/appdynamics/. /opt/appd/ && chmod -R 0777 /opt/appd/
+      #     #image: mashrequae.azurecr.io/appd-java-agent:4.5.13
+      #     #name: appd-init
+      #     #volumeMounts:
+      #     #- mountPath: /opt/appd
+      #     #  name: appd-agent-repo
+      volumes:
+      - name: azure-file-share
+        persistentVolumeClaim:
+            claimName: pvc-npssnfspr-$(Release.EnvironmentName)
+
+###

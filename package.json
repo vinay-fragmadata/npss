@@ -1,0 +1,148 @@
+{
+  "name": "uaeipp-core-ui-frontend-services",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "/frontend/",
+  "dependencies": {
+    "@babel/core": "^7.21.0",
+    "@babel/preset-env": "^7.20.2",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
+    "@mui/icons-material": "^5.11.0",
+    "@mui/lab": "^5.0.0-alpha.118",
+    "@mui/material": "^5.11.2",
+    "@mui/x-date-pickers": "^5.0.16",
+    "@reduxjs/toolkit": "^1.9.1",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^14.0.0",
+    "@testing-library/user-event": "^14.4.3",
+    "assert": "^2.0.0",
+    "axios": "^1.2.6",
+    "babel-plugin-dynamic-import-node": "^2.3.3",
+    "buffer": "^6.0.3",
+    "dayjs": "^1.11.7",
+    "env-cmd": "^10.1.0",
+    "eslint-import-resolver-webpack": "^0.13.2",
+    "file-saver": "^2.0.5",
+    "jest": "^29.5.0",
+    "jest-junit": "^15.0.0",
+    "js-cookie": "^3.0.1",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.4",
+    "node-polyfill-webpack-plugin": "^2.0.1",
+    "node-sass": "^8.0.0",
+    "persist": "^0.2.7",
+    "react": "^18.2.0",
+    "react-app-polyfill": "^3.0.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5",
+    "react-router-dom": "^6.9.0",
+    "react-scripts": "^5.0.1",
+    "react-test-renderer": "^18.2.0",
+    "recharts": "^2.4.2",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-mock-store": "^1.5.4",
+    "redux-persist": "^6.0.0",
+    "redux-thunk": "^2.4.2",
+    "sass": "^1.62.0",
+    "web-vitals": "^3.3.0",
+    "webpack": "^5.76.1",
+    "workbox-webpack-plugin": "^6.5.4",
+    "xml-beautifier": "^0.5.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.18.6",
+    "@babel/preset-typescript": "^7.21.0",
+    "@types/enzyme": "^3.10.12",
+    "@types/enzyme-adapter-react-16": "^1.0.6",
+    "@types/jest": "^29.4.0",
+    "@types/js-cookie": "^3.0.3",
+    "@types/node": "^18.15.1",
+    "@types/react": "^18.0.31",
+    "@types/react-dom": "^18.0.11",
+    "@types/react-lazyload": "^3.2.0",
+    "babel-jest": "^29.5.0",
+    "enzyme": "^3.11.0",
+    "enzyme-adapter-react-16": "^1.15.7",
+    "enzyme-to-json": "^3.6.2",
+    "jest-junit": "^15.0.0",
+    "jest-sonar-reporter": "^2.0.0",
+    "npm-run-all": "^4.1.5",
+    "ts-jest": "^29.0.5",
+    "typescript": "^4.9.5",
+    "webpack-cli": "^5.0.1"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.1.3"
+  },
+  "resolutions": {
+    "webpack": "5.76.1",
+    "workbox-webpack-plugin": "6.5.4"
+  },
+  "jest": {
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.tsx",
+      "src/**/*.ts",
+      "!**/*.js"
+    ],
+    "coverageReporters": [
+      "cobertura",
+      "lcov",
+      "text"
+    ],
+    "resetMocks": false,
+    "moduleNameMapper": {
+      "axios": "axios/dist/node/axios.cjs"
+    }
+  },
+  "jestSonar": {
+    "sonar56x": true,
+    "reportPath": "reports",
+    "reportFile": "sonar-report.xml",
+    "indent": 4
+  },
+  "scripts": {
+    "test:ci": "yarn run",
+    "watch-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
+    "start": "env-cmd -f .env.prod react-scripts start",
+    "start-dev": "env-cmd -f .env.dev react-scripts start",
+    "start-vpn": "env-cmd -f .env react-scripts start",
+    "start-js": "set HTTP=true&&react-scripts start",
+    "start-js-mac": "HTTPS=true react-scripts start",
+    "start:mac": "env-cmd -f .env.prod npm-run-all -p watch-css start-js-mac",
+    "sonar": "sonarqube-verify",
+    "build-js": "react-scripts build",
+    "build": "env-cmd -f .env.prod npm-run-all build-js",
+    "test:dev": "react-scripts test --env=jsdom --unhandled-rejections=strict --verbose",
+    "test:win": "set  && react-scripts test --silent --env=jsdom --coverage --testResultsProcessor=jest-junit --unhandled-rejections=strict --verbose",
+    "test:coverage": "react-scripts test --coverage --runInBand --watchAll=false",
+    "test:cover": "node ./tools/test-cover.js",
+    "eject": "react-scripts eject",
+    "test": "set CI=true && react-scripts  test --silent --env=jsdom --coverage --testResultsProcessor=jest-junit",
+    "isready": "npm run format && npm run lint && npm run test:coverage && npm run build",
+    "check-sonar": "npm run build-css && npm run test:win -u && npm run sonar",
+    "check-sonar:win": "npm run start-docker-compose && npm run build-css && npm run test:win -u && npm run sonar",
+    "start-docker-compose": "docker-compose -f docker-compose.sonar.yml up -d",
+    "stop-docker-compose": "docker-compose -f docker-compose.sonar.yml down"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

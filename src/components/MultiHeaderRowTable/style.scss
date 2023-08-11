@@ -1,0 +1,88 @@
+@import "../../variables";
+
+.table-container {
+  .sticky-header {
+    position: sticky;
+    z-index: 10;
+    top: 0;
+    z-index: 99;
+    box-shadow: 0px 1px 3px $table_shadow;
+  }
+
+  .header-table-row {
+    .status-class {
+      position: sticky;
+      left: 0;
+      top: 0;
+      z-index: 50;
+      background-color: $table_header_background;
+    }
+    .multi-row-class {
+      position: sticky;
+      left: 0 !important;
+      z-index: 99;
+      background-color: $white;
+    }
+    .multi-row-class-1 {
+      position: sticky;
+      left: 12%;
+      z-index: 99;
+      background-color: $white;
+    }
+    .multi-col-class {
+      position: sticky;
+      left: 0 !important;
+      z-index: 99;
+    }
+    .multi-col-class-1 {
+      position: sticky;
+      left: 12%;
+      z-index: 99;
+      background-color: $table_header_background;
+    }
+  }
+
+  .table-row {
+    .validation-rejects-before-sending-to-cb,
+    .reject-response-from-cb,
+    .in-retry-after-failure-from-cb {
+      background-color: $warning_primary !important;
+      font-weight: 600;
+    }
+    .successful {
+      font-weight: 600;
+      background-color: $success_primary !important;
+    }
+
+    .failure-no-response-from-cb,
+    .system-failure-before-sending-to-cb,
+    .failure-after-receiving-response-from-cb {
+      background-color: $failure_primary !important;
+      font-weight: 600;
+    }
+
+    .status-class {
+      position: sticky;
+      left: 0 !important;
+      z-index: 50;
+      background-color: $table_header_background;
+    }
+
+    .multi-row-class {
+      position: sticky;
+      left: 0 !important;
+      z-index: 99;
+      background-color: $table_row_background;
+    }
+
+    .multi-row-class-1 {
+      position: sticky;
+      left: 12%;
+      z-index: 99;
+      background-color: $table_row_background;
+    }
+  }
+  .normal-cell {
+    background-color: $white;
+  }
+}

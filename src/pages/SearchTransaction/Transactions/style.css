@@ -1,0 +1,52 @@
+.table-container .MuiTablePagination-selectLabel,
+.table-container .MuiTablePagination-select,
+.table-container .MuiTablePagination-selectIcon,
+.table-container .MuiTablePagination-displayedRows,
+.table-container .MuiTablePagination-actions {
+  font-family: Gilroy-medium;
+}
+
+.search-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.MuiInputBase-formControl.MuiInputBase-sizeSmall.MuiInputBase-adornedEnd.css-o9k5xi-MuiInputBase-root-MuiOutlinedInput-root {
+  padding: 0;
+  font-family: Gilroy-Regular;
+}
+
+.no-record-found {
+  width: fit-content;
+  margin: 2% auto;
+}
+
+.MuiTablePagination-displayedRows {
+  display: none;
+}
+
+.MuiTablePagination-select,
+.css-16c50h-MuiInputBase-root-MuiTablePagination-select {
+  margin-right: 0px;
+}
+
+.pagination-indicator {
+  font-family: Gilroy-medium;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+  color: #2c2c2c;
+  cursor: default;
+}
+
+.pagination-indicator span {
+  margin: 0 5px 0 5px;
+  font-weight: 600;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  letter-spacing: 0.01071em;
+  color: #2c2c2c;
+  cursor: default;
+}

@@ -1,0 +1,40 @@
+.login-page-container {
+  background-image: linear-gradient(
+    45deg,
+    #284fa4,
+    #2d53a8,
+    #294fa4 68%,
+    #244aa0 68%,
+    #1e459b
+  );
+
+  .login-page-logo {
+    margin-top: 3%;
+  }
+
+  .login-form-box {
+    width: 50%;
+    height: 100%;
+
+    .login-form-container {
+      width: 80%;
+      height: 82%;
+
+      .login-form-control {
+        width: 100%;
+      }
+    }
+
+    .mashreq-image {
+      height: 100%;
+      width: 100%;
+    }
+    .login-button {
+      margin-top: 15%;
+    }
+
+    .login-button:hover {
+      background-color: #bea446;
+    }
+  }
+}

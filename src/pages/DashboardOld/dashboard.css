@@ -1,0 +1,44 @@
+.dashboard {
+  text-align: initial;
+  color: black;
+  margin-left: 6px;
+}
+.dashboard-paper {
+  background-color: #f5f6f9;
+  padding-bottom: 1%;
+}
+.primary {
+  background: blue;
+  border: 0px;
+  width: 92px;
+  height: 36px;
+  color: white;
+  font-weight: bold;
+}
+
+.MuiTextField-root,
+.MuiFormControl-root {
+  width: 95%;
+}
+
+.dashboard-paper .dashboard-input-container {
+  margin: 0 1% 0 1%;
+  margin-left: 1%;
+}
+
+.dashboard-input {
+  margin: 1% 0;
+}
+
+.MuiTextField-root {
+  background-color: #fff;
+}
+
+.select-input {
+  width: 96%;
+  background-color: #fff;
+}
+
+.icon {
+  margin-top: -10%;
+}

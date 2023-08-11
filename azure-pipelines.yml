@@ -1,0 +1,19 @@
+name: $(Build.BuildId)
+trigger:
+  - master
+  - develop
+
+pr:
+  - master
+  - develop
+  
+resources:
+  repositories:
+    - repository: templates
+      type: git
+      name: National Payment Systems Strategy - NPSS/build-templates
+
+jobs:
+  - template: node-npm-app-deployment.yaml@templates
+    parameters:
+        VeracodeAppName: 'NPSS'

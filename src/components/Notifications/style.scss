@@ -1,0 +1,55 @@
+.popover {
+  display: flex;
+  justify-content: center;
+  margin-top: 10%;
+}
+
+.popover svg {
+  font-size: 40px;
+}
+
+.success-message {
+  font-family: "Gilroy";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+}
+
+.message-section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 5%;
+  .primary-message {
+    color: #d10000;
+    text-align: center;
+  }
+  .secondary-message {
+    text-align: center;
+    font-family: "Gilroy-medium";
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+  }
+  .primary-btn {
+    width: 50%;
+    background-color: #ff5e00;
+    margin: auto;
+    text-transform: capitalize;
+  }
+  .primary-btn:hover {
+    width: 50%;
+    background-color: #cd652a;
+    margin: auto;
+    text-transform: capitalize;
+  }
+  .secondary-btn {
+    color: #ff5e00;
+    text-transform: capitalize;
+  }
+  .secondary-btn {
+    color: #cd652a;
+    text-transform: capitalize;
+  }
+}

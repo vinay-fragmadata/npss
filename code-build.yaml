@@ -1,0 +1,32 @@
+# name: $(Build.BuildId)
+# trigger:
+#   branches:
+#     include:
+#     - master
+#     - develop
+#   paths:
+#     exclude:
+#     - docker-build.yaml
+#     - Dockerfile
+#     - shared-config/*
+# pr:
+#   branches:
+#     include:
+#     - master
+#     - develop
+#   paths:
+#     exclude:
+#     - docker-build.yaml
+#     - Dockerfile
+#     - shared-config/*
+
+# resources:
+#   repositories:
+#     - repository: templates
+#       type: git
+#       name: National Payment Systems Strategy - NPSS/build-templates
+
+# jobs:
+#   - template: node-npm-app-deployment.yaml@templates
+#     parameters:
+#       VeracodeAppName: 'NPSS'
